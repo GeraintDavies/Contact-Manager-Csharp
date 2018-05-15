@@ -1,0 +1,58 @@
+﻿<Window x:Class="Contact_Management.ListContacts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Contact_Management"
+        mc:Ignorable="d"
+        Title="ListContacts" Height="524.552" Width="847.155"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="167" Margin="10,53,0,0" VerticalAlignment="Top" Width="820" ItemsSource="{Binding Path=Items, Mode=OneWay}"/>
+        <Button x:Name="back" Content="back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="back_Click" FontFamily="Verdana" ToolTip="back to first screen"/>
+        <Button x:Name="delbutton" Content="Delete" HorizontalAlignment="Left" Margin="680,249,0,0" VerticalAlignment="Top" Width="136" Height="49" Click="delbutton_Click" ToolTip="Delete a contact"/>
+        <TextBox x:Name="searchBox" HorizontalAlignment="Left" Height="23" Margin="59,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged" ToolTip="Select Category before searching"/>
+        <Button x:Name="editbutton" Content="Edit" HorizontalAlignment="Left" Margin="537,249,0,0" VerticalAlignment="Top" Width="121" Height="49" Click="editbutton_Click" ToolTip="edit a contact"/>
+        <Label x:Name="label" Content="Search:" HorizontalAlignment="Left" Margin="11,23,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.105,0.692"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="179,26,0,0" VerticalAlignment="Top" Width="120" ToolTip="choose what you're searching for"/>
+        <TextBlock x:Name="title" HorizontalAlignment="Left" Margin="18,248,0,0" TextWrapping="Wrap" Text="Title:" VerticalAlignment="Top" Height="23" Width="33" RenderTransformOrigin="-0.443,0.822" FontFamily="Verdana"/>
+        <TextBlock x:Name="name" HorizontalAlignment="Left" Margin="18,291,0,0" TextWrapping="Wrap" Text="Forename:" VerticalAlignment="Top" Height="23" Width="70" FontFamily="Verdana"/>
+        <TextBox x:Name="forenameBox" HorizontalAlignment="Left" Height="23" Margin="18,304,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.Name, ElementName=dataGrid}" VerticalAlignment="Top" Width="114" RenderTransformOrigin="-0.281,-3.334" FontFamily="Verdana" ToolTip="contact first name">
+            <TextBox.BindingGroup>
+                <BindingGroup Name=""/>
+            </TextBox.BindingGroup>
+            <TextBox.InputScope>
+                <InputScope>
+                    <InputScope.Names>
+                        <InputScopeName NameValue="Url"/>
+                    </InputScope.Names>
+                </InputScope>
+            </TextBox.InputScope>
+        </TextBox>
+        <TextBox x:Name="surnameBox" HorizontalAlignment="Left" Height="23" Margin="17,354,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="115" FontFamily="Verdana" Text="{Binding SelectedItem.Name, ElementName=dataGrid}" ToolTip="contact surname"/>
+        <TextBox x:Name="emailBox" HorizontalAlignment="Left" Height="23" Margin="18,400,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="234" FontFamily="Verdana" Text="{Binding SelectedItem.Name, ElementName=dataGrid}" ToolTip="email address of the contact"/>
+        <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Left" Margin="18,340,0,0" TextWrapping="Wrap" Text="Surname:" VerticalAlignment="Top" Height="23" Width="62" RenderTransformOrigin="0.5,0.5" FontFamily="Verdana">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.3"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="textBlock1_Copy1" HorizontalAlignment="Left" Margin="18,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="43" FontFamily="Verdana"><Run Text="Email"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="numberBox" HorizontalAlignment="Left" Height="23" Margin="18,450,0,0" Text="{Binding SelectedItem.Name, ElementName=dataGrid}" TextWrapping="Wrap" VerticalAlignment="Top" Width="114" FontFamily="Verdana" ToolTip="contact number"/>
+        <TextBlock x:Name="textBlock1_Copy2" HorizontalAlignment="Left" Margin="18,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="97" Text="Phone Number:" FontFamily="Verdana"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Height="23" Margin="18,263,0,0" VerticalAlignment="Top" Width="84" Text="{Binding SelectedItem.Name, ElementName=dataGrid}"/>
+        <TextBox x:Name="twitterBox" HorizontalAlignment="Left" Height="23" Margin="147,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" FontFamily="Verdana" Text="{Binding SelectedItem.Name, ElementName=dataGrid}" ToolTip="need to start with '@' twitter handle"/>
+        <TextBox x:Name="facebookBox" HorizontalAlignment="Left" Height="23" Margin="147,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" FontFamily="Verdana" Text="{Binding SelectedItem.Name, ElementName=dataGrid}" ToolTip="need to start with '@' facebook username"/>
+        <TextBox x:Name="companyBox" HorizontalAlignment="Left" Height="23" Margin="147,355,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="241" FontFamily="Verdana" Text="{Binding SelectedItem.Name, ElementName=dataGrid}" ToolTip="company they work for"/>
+        <TextBlock x:Name="textBlock1_Copy3" HorizontalAlignment="Left" Margin="147,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="97" FontFamily="Verdana"><Run Text="Twitter"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="textBlock1_Copy4" HorizontalAlignment="Left" Margin="147,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="97" FontFamily="Verdana"><Run Text="facebook"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="textBlock1_Copy5" HorizontalAlignment="Left" Margin="147,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" Width="97" FontFamily="Verdana"><Run Text="Company"/><Run Text=":"/></TextBlock>
+        <Button x:Name="savebutton" Content="Save" HorizontalAlignment="Left" Margin="179,437,0,0" VerticalAlignment="Top" Width="93" Height="40" Click="savebutton_Click" FontFamily="Verdana" ToolTip="save the editted contact"/>
+        <Label x:Name="label1" Content="Select a record and press the 'Edit' button before filling any fields." HorizontalAlignment="Left" Margin="5,225,0,0" VerticalAlignment="Top" Width="355"/>
+
+    </Grid>
+</Window>

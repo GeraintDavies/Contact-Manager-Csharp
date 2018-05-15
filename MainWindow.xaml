@@ -1,0 +1,16 @@
+﻿<Window x:Class="Contact_Management.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Contact_Management"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="281.865" Width="461.885"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button x:Name="button" Content="Add Contact" HorizontalAlignment="Left" Margin="28,128,0,0" VerticalAlignment="Top" Width="157" Height="86" Click="button_Click_1" FontFamily="Verdana" FontSize="13.333" />
+        <Label x:Name="label" Content="Contact Manager" HorizontalAlignment="Left" Height="60" Margin="86,68,0,0" VerticalAlignment="Top" Width="261" FontSize="29.333" FontFamily="Verdana" />
+        <Button x:Name="button1" Content="List Contacts" HorizontalAlignment="Left" Margin="249,128,0,0" VerticalAlignment="Top" Width="169" Height="86" Click="button1_Click" FontFamily="Verdana" FontSize="13.333"/>
+
+    </Grid>
+</Window>
