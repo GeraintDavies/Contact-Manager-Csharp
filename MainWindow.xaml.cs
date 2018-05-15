@@ -21,7 +21,7 @@ namespace Contact_Management
     /// </summary>
     public partial class MainWindow : Window
     {
-        private SimpleDataSource SDS = new SimpleDataSource("", "", 3306, "", "");
+        private SimpleDataSource SDS = new SimpleDataSource("server_name", "db_name", port, "username", "password");
 
         public MainWindow()
         {
