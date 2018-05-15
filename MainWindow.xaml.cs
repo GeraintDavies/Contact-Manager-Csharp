@@ -21,7 +21,7 @@ namespace Contact_Management
     /// </summary>
     public partial class MainWindow : Window
     {
-        private SimpleDataSource SDS = new SimpleDataSource("mysql.cs.bangor.ac.uk", "eeu6da", 3306, "eeu6da", "eeu6da");
+        private SimpleDataSource SDS = new SimpleDataSource("", "", 3306, "", "");
 
         public MainWindow()
         {
