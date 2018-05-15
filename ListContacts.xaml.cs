@@ -30,7 +30,7 @@ namespace Contact_Management
 
 
         public static int i;
-        SimpleDataSource SDS = new SimpleDataSource("mysql.cs.bangor.ac.uk", "eeu6da", 3306, "eeu6da", "eeu6da");
+        SimpleDataSource SDS = new SimpleDataSource("server_name", "db_name", port, "username", "password");
 
         /// <summary>
         /// sets the values in the comboboxes and sets max length of the textboxes
