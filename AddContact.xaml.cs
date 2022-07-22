@@ -21,7 +21,7 @@ namespace Contact_Management
     /// </summary>
     public partial class AddContact : Window
     {
-        SimpleDataSource SDS = new SimpleDataSource("mysql.cs.bangor.ac.uk", "eeu6da", 3306, "eeu6da", "eeu6da");
+        SimpleDataSource SDS = new SimpleDataSource("server_name", "db_name", port, "username", "password");
         
         /// <summary>
         /// sets the content for the combo box and max length of all the textboxes
